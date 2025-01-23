@@ -29,7 +29,6 @@ function mouseReleased() {
   if (dragCoordinates.length > 0) {
     // 座標をCSV形式に変換
     let csvData = [];
-    csvData.push("x,y"); // ヘッダー行を追加
     dragCoordinates.forEach(coord => {
       csvData.push(coord.join(",")); // "x,y"形式に変換して追加
     });
