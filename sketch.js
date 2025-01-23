@@ -22,9 +22,9 @@ function draw() {
     strokeWeight(2); // 線の太さ
     line(pmouseX, pmouseY, mouseX, mouseY); // 前フレームと現在のマウス位置をつなぐ線
     // 座標間の距離を計算し、条件に応じてログ
-    if (dragCoordinates.length === 0 || distance(mouseX, mouseY, dragCoordinates[dragCoordinates.length - 1][0], dragCoordinates[dragCoordinates.length - 1][1]) >= MIN_DISTANCE) {
+    //if (dragCoordinates.length === 0 || distance(mouseX, mouseY, dragCoordinates[dragCoordinates.length - 1][0], dragCoordinates[dragCoordinates.length - 1][1]) >= MIN_DISTANCE) {
       dragCoordinates.push([mouseX, mouseY]); // 距離が条件を満たした場合のみプッシュ
-    }
+    //}
   }
 }
 
