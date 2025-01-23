@@ -15,7 +15,7 @@ function setup() {
 
 function draw() {
   // 背景を毎フレーム更新（画像を固定表示したい場合）
-  background(bgImage);
+  //background(bgImage);
 
   // ドラッグ中の線を描画
   if (mouseIsPressed) {
