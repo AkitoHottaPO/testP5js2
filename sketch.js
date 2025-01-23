@@ -1,5 +1,6 @@
 let dragCoordinates = []; // ドラッグ中の座標を記録する配列
 let bgImage; // 背景画像を格納する変数
+const MIN_DISTANCE = 10; // プッシュするための最小距離
 
 function preload() {
   bgImage = loadImage('back.jpg', 
@@ -20,7 +21,10 @@ function draw() {
     stroke(0); // 線の色を黒に設定
     strokeWeight(2); // 線の太さ
     line(pmouseX, pmouseY, mouseX, mouseY); // 前フレームと現在のマウス位置をつなぐ線
-    dragCoordinates.push([mouseX, mouseY]); // 座標を配列形式で記録
+    // 座標間の距離を計算し、条件に応じてログ
+    if (dragCoordinates.length === 0 || distance(mouseX, mouseY, dragCoordinates[dragCoordinates.length - 1][0], dragCoordinates[dragCoordinates.length - 1][1]) >= MIN_DISTANCE) {
+      dragCoordinates.push([mouseX, mouseY]); // 距離が条件を満たした場合のみプッシュ
+    }
   }
 }
 
